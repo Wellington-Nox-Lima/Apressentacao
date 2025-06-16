@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   Alert,
   Image,
+  StyleSheet,
 } from 'react-native';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import { FlipHorizontal, Camera as CameraIcon, X, Check } from 'lucide-react-native';
@@ -147,7 +148,7 @@ export default function CameraScreen() {
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000000',
@@ -294,4 +295,4 @@ const styles = {
     color: '#ffffff',
     marginLeft: 8,
   },
-};
+});

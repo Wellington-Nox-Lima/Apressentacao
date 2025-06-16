@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   ScrollView,
   Dimensions,
+  StyleSheet,
 } from 'react-native';
 import { Settings, Grid, Heart, MessageCircle, Share } from 'lucide-react-native';
 
@@ -88,7 +89,7 @@ export default function ProfileScreen() {
         </View>
 
         <View style={styles.postsGrid}>
-          {mockUserPosts.map((post, index) => (
+          {mockUserPosts.map((post) => (
             <TouchableOpacity key={post.id} style={styles.postItem}>
               <Image source={{ uri: post.image }} style={styles.postImage} />
               <View style={styles.postOverlay}>
@@ -111,7 +112,7 @@ export default function ProfileScreen() {
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
@@ -258,4 +259,4 @@ const styles = {
     fontFamily: 'Inter-SemiBold',
     color: '#ffffff',
   },
-};
+});

@@ -10,6 +10,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
+  StyleSheet,
 } from 'react-native';
 import { Camera, Image as ImageIcon, X, Check } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
@@ -197,7 +198,7 @@ export default function CreateScreen() {
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f8f9fa',
@@ -337,4 +338,4 @@ const styles = {
     borderRadius: 16,
     padding: 8,
   },
-};
+});

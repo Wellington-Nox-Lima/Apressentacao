@@ -10,14 +10,13 @@ import {
   Dimensions,
   Alert,
   Platform,
+  StyleSheet,
 } from 'react-native';
 import { Heart, MessageCircle, Share, MoreHorizontal } from 'lucide-react-native';
 import Animated, { 
   useSharedValue, 
   useAnimatedStyle, 
   withSpring,
-  withTiming,
-  interpolate,
 } from 'react-native-reanimated';
 import { GestureDetector, Gesture } from 'react-native-gesture-handler';
 
@@ -51,12 +50,7 @@ const PostCard = ({ post, onLike, onComment, onShare }) => {
   const [liked, setLiked] = useState(post.liked);
   const [likeCount, setLikeCount] = useState(post.likes);
   
-  const scale = useSharedValue(1);
   const heartScale = useSharedValue(1);
-
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }],
-  }));
 
   const heartAnimatedStyle = useAnimatedStyle(() => ({
     transform: [{ scale: heartScale.value }],
@@ -128,7 +122,7 @@ const PostCard = ({ post, onLike, onComment, onShare }) => {
   };
 
   return (
-    <Animated.View style={[styles.postCard, animatedStyle]}>
+    <View style={styles.postCard}>
       <View style={styles.postHeader}>
         <Image source={{ uri: post.user.avatar }} style={styles.avatar} />
         <View style={styles.userInfo}>
@@ -187,7 +181,7 @@ const PostCard = ({ post, onLike, onComment, onShare }) => {
           <Share size={24} color="#6c757d" />
         </TouchableOpacity>
       </View>
-    </Animated.View>
+    </View>
   );
 };
 
@@ -228,7 +222,7 @@ export default function FeedScreen() {
     console.log(`Post ${postId} compartilhado`);
   };
 
-  const renderPost = ({ item, index }) => (
+  const renderPost = ({ item }) => (
     <PostCard
       post={item}
       onLike={handleLike}
@@ -289,17 +283,12 @@ export default function FeedScreen() {
         maxToRenderPerBatch={5}
         windowSize={10}
         initialNumToRender={5}
-        getItemLayout={(data, index) => ({
-          length: 400, // Approximate height of each post
-          offset: 400 * index,
-          index,
-        })}
       />
     </SafeAreaView>
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f8f9fa',
@@ -473,4 +462,4 @@ const styles = {
     color: '#adb5bd',
     textAlign: 'center',
   },
-};
+});

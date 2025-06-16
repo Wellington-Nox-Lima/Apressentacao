@@ -1,5 +1,5 @@
 import { Link, Stack } from 'expo-router';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Home } from 'lucide-react-native';
 
 export default function NotFoundScreen() {
@@ -22,7 +22,7 @@ export default function NotFoundScreen() {
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
@@ -56,4 +56,4 @@ const styles = {
     fontFamily: 'Inter-SemiBold',
     color: '#ffffff',
   },
-};
+});
