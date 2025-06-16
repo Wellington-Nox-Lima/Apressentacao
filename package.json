@@ -1,5 +1,5 @@
 {
-  "name": "bordado-social-feed",
+  "name": "bordado-social",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {

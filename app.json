@@ -1,8 +1,7 @@
 {
   "expo": {
-    "assetBundlePatterns": ["**/*"],
-    "name": "bordado_social",
-    "slug": "snack-4b1bf902-911e-4ce0-94a5-a867d89dda9d",
+    "name": "Bordado Social",
+    "slug": "bordado-social",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,6 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -23,10 +25,12 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "plugins": [
-      "expo-sqlite"
-    ]
+      "expo-router"
+    ],
+    "scheme": "bordado-social"
   }
 }
